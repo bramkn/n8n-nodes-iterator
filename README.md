@@ -41,7 +41,7 @@ The HTTP node will look something like this for this example:
 ![currentIncrement](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/currentIncrement.png)
 
 
-### General options and (hidden)features
+## General options and (hidden)features
 
 ![options](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/options.png)
 
