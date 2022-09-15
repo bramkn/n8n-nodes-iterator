@@ -174,7 +174,6 @@ export class Iterator implements INodeType {
 			}
 
 			if(items.length < expectedItemCount){
-				console.log(true);
 				done = true;
 			}
 		}
