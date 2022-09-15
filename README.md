@@ -6,13 +6,13 @@ The iterator node can be used for paging HTTP requests. There is 2 main options 
 
 ### Reference Next
 This can be used if the API has a response which also tells you what the next page is. 
-![Next](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/nextResponseExample.png)
+![Next](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/nextResponseExample.png)
 
 You need to fill in the "currentReference" inside the HTTP node.
-![currentRef](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/currentRef.png)
+![currentRef](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/currentRef.png)
 
 This will automatically be filled with the correct value, when you setup the Iterator node correctly.
-![setupNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/setupNext.png)
+![setupNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/setupNext.png)
 
 
 
