@@ -146,9 +146,10 @@ export class Iterator implements INodeType {
 		const nodeContext = this.getContext('node');
 		const iterType = this.getNodeParameter('iterType', 0, '') as string;
 		const limit = this.getNodeParameter('options.limit', 0, 0) as number;
-		const expectedItemCount = this.getNodeParameter('expectedItemCount', 0, 0) as number;
+		const expectedItemCount = this.getNodeParameter('expectedItemCount', 0, 50) as number;
 		const combine = this.getNodeParameter('options.combine', 0, '') as boolean;
-		let done = false;
+		const anotherPage = this.getNodeParameter('options.anotherPage', 0, true) as boolean;
+		let done = !anotherPage;
 
 		const returnItems: INodeExecutionData[][] = [[],[]];
 
@@ -173,6 +174,7 @@ export class Iterator implements INodeType {
 			}
 
 			if(items.length < expectedItemCount){
+				console.log(true);
 				done = true;
 			}
 		}
@@ -196,7 +198,7 @@ export class Iterator implements INodeType {
 				}
 			}
 
-			if(nodeContext.currentReference === ''){
+			if(nodeContext.currentReference === null){
 				done = true;
 			}
 
@@ -207,6 +209,9 @@ export class Iterator implements INodeType {
 		}
 		else if(done === true){
 			returnItems[0] = nodeContext.processedItems;
+		}
+		else{
+			returnItems[1] = [items[items.length-1]];
 		}
 
 
