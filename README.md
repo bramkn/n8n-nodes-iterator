@@ -34,6 +34,7 @@ This is usually simply a page number so from 1,2,3 etc. But it can also be an of
 The "Expected Item Count" is used to make sure it will stop at some point. This is the page size you need to fill in here. Whenever you are getting les records than the pagesize it will end the loop.
 
 The HTTP node will look something like this for this example:
+
 ![incrementHTTP](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/incrementHTTP.png)
 
 ![currentIncrement](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/currentIncrement.png)
