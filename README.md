@@ -54,7 +54,7 @@ The limit will limit the amount of records returned in the end. This is especial
 * Option Is There Another Page:
 This is a boolean which can be set to end the loop when ever you need it to. This can be set with an expression to have complete control over the ending of the loop. Can also be used if an API does not have the next reference but does have a flag telling you it the last page, or if you want to use the count of all record to let it decide when to stop.
 
-* only 1 item is send into the loop to make sure you are not accidentally querying an API multiple times with the same request.
+* only 1 item is send into the loop to make sure you are not accidentally querying an API multiple times with the same request. This will always be the last item. When the Loop ends, the Done path will contain the items of the last iteration or the combined set of items.
 
 ## Prerequisites
 
