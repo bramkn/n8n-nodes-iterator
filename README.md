@@ -7,6 +7,7 @@ The iterator node can be used for paging HTTP requests. There is 2 main options 
 ### Reference Next
 This can be used if the API has a response which also tells you what the next page is.
 It can also be used with APIs which only give a "next cursor" for example, you will simply need to only put in that part of the string as the expression.
+
 ![Next](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/nextResponseExample.png)
 
 You can use the "currentReference" as the value in the HTTP node. So in this case it is the full URL.
