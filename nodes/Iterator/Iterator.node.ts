@@ -208,7 +208,7 @@ export class Iterator implements INodeType {
 			returnItems[0] = nodeContext.processedItems.slice(0,limit);
 		}
 		else if(done === true){
-			returnItems[0] = nodeContext.processedItems.filter( (x: { json: Object; })=> Object.keys(x.json).length !== 0 );
+			returnItems[0] = nodeContext.processedItems.filter( (x: { json: {}; })=> Object.keys(x.json).length !== 0 );
 		}
 		else{
 			returnItems[1] = [items[items.length-1]];
