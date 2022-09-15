@@ -2,7 +2,21 @@
 
 # n8n-nodes-iterator
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+The iterator node can be used for paging HTTP requests. There is 2 main options for this.
+
+### Reference Next
+This can be used if the API has a response which also tells you what the next page is. 
+![Next](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/nextResponseExample.png)
+
+You need to fill in the "currentReference" inside the HTTP node.
+![currentRef](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/currentRef.png)
+
+This will automatically be filled with the correct value, when you setup the Iterator node correctly.
+![setupNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/Images/setupNext.png)
+
+
+
+### Auto Increment
 
 To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
 
