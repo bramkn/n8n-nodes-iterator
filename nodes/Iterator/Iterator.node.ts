@@ -173,11 +173,14 @@ export class Iterator implements INodeType {
 				else{
 					nodeContext.processedItems =  items;
 				}
+
+				if(items.length < expectedItemCount){
+					done = true;
+				}
+
 			}
 
-			if(items.length < expectedItemCount){
-				done = true;
-			}
+
 		}
 
 		if(iterType === 'nextRef'){
