@@ -21,11 +21,17 @@ The Reference Start is the first page it needs to retrieve.
 An expression is used in the Reference Next, to get the next page for every iteration:
 ![httpNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/httpNext.png)
 
-When there is no next page left it will stop the loop.
+When there is no next page left it will end the loop.
 
 ### Auto Increment
+The auto increment is for manual iteration through the different pages.
+This is usually simply a page number so from 1,2,3 etc. But it can also be an offset that needs to be set.
+* If it is normal pages, set the increment size to 1 to retrieve all pages.
+* If the API is using an offset set it to the size of the page to let it loop through all pages.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+![increment](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/increment.png)
+
+The "Expected Item Count" is used to make sure it will stop at some point. This is the page size you need to fill in here. Whenever you are getting les records than the pagesize it will end the loop.
 
 ## Prerequisites
 
