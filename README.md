@@ -4,6 +4,10 @@
 
 The iterator node can be used for paging HTTP requests. There is 2 main options for this.
 
+## Usage
+The node can be a fit funky to setup some times, this because of the flexibility of it.
+If you cannot figure it out or have questions please open a topic on the n8n community for help.
+
 ### Reference Next
 This can be used if the API has a response which also tells you what the next page is.
 It can also be used with APIs which only give a "next cursor" for example, you will simply need to use that as part of the string in an expression.
@@ -56,41 +60,18 @@ This is a boolean which can be set to end the loop when ever you need it to. Thi
 
 * only 1 item is send into the loop to make sure you are not accidentally querying an API multiple times with the same request. This will always be the last item. When the Loop ends, the Done path will contain the items of the last iteration or the combined set of items.
 
-## Prerequisites
 
-You need the following installed on your development machine:
+## Installation
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
+## Compatibility
 
-## Using this starter
+This node was developed and tested in version 0.193.3.
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+## Resources
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
-
-## More information
-
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
 
 ## License
 
