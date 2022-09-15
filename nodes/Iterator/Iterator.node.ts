@@ -11,6 +11,8 @@ export class Iterator implements INodeType {
 		displayName: 'Iterator',
 		name: 'iterator',
 		group: ['transform'],
+		icon: 'file:repeat.svg',
+		//<i class="fa-solid fa-arrows-repeat"></i>
 		version: 1,
 		description: 'Iterator',
 		defaults: {
