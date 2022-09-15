@@ -14,6 +14,7 @@ You need to fill in the "currentReference" inside the HTTP node.
 This will automatically be filled with the correct value, when you setup the Iterator node correctly.
 ![setupNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/setupNext.png)
 
+![httpNext](https://github.com/bramkn/n8n-nodes-iterator/blob/master/images/httpNext.png)
 
 
 ### Auto Increment
