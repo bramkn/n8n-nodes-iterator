@@ -32,11 +32,11 @@ export class Iterator implements INodeType {
 				options:[
 					{
 						name: 'Auto Increment',
-					  value: 'increment',
+						value: 'increment',
 					},
 					{
 						name: 'Reference Next',
-					  value: 'nextRef',
+						value: 'nextRef',
 					},
 				],
 				default: 'increment',
@@ -134,7 +134,7 @@ export class Iterator implements INodeType {
 						default: 50,
 						description: 'Max number of results to return',
 					},
-				]
+				],
 			},
 		],
 	};
@@ -148,13 +148,12 @@ export class Iterator implements INodeType {
 		const nodeContext = this.getContext('node');
 		const iterType = this.getNodeParameter('iterType', 0, '') as string;
 		const limit = this.getNodeParameter('options.limit', 0, 0) as number;
-		const expectedItemCount = this.getNodeParameter('expectedItemCount', 0, 50) as number;
+		const expectedItemCount = this.getNodeParameter('options.expectedItemCount', 0, 50) as number;
 		const combine = this.getNodeParameter('options.combine', 0, '') as boolean;
 		const anotherPage = this.getNodeParameter('options.anotherPage', 0, true) as boolean;
 		let done = !anotherPage;
 
 		const returnItems: INodeExecutionData[][] = [[],[]];
-
 		if(iterType === 'increment'){
 
 			if (nodeContext.currentIncrement === undefined) {
@@ -173,13 +172,11 @@ export class Iterator implements INodeType {
 				else{
 					nodeContext.processedItems =  items;
 				}
-
 				if(items.length < expectedItemCount){
 					done = true;
 				}
 
 			}
-
 
 		}
 
@@ -205,14 +202,13 @@ export class Iterator implements INodeType {
 			if(nodeContext.currentReference === null){
 				done = true;
 			}
-
 		}
 
 		if(limit !== 0 && nodeContext.processedItems.length >= limit){
 			returnItems[0] = nodeContext.processedItems.slice(0,limit);
 		}
 		else if(done === true){
-			returnItems[0] = nodeContext.processedItems;
+			returnItems[0] = nodeContext.processedItems.filter( (x: { json: Object; })=> Object.keys(x.json).length !== 0 );
 		}
 		else{
 			returnItems[1] = [items[items.length-1]];
