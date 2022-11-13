@@ -158,8 +158,8 @@ export class Iterator implements INodeType {
 		const nodeContext = this.getContext('node');
 		const iterType = this.getNodeParameter('iterType', 0, '') as string;
 		const limit = this.getNodeParameter('options.limit', 0, 0) as number;
-		const expectedItemCount = this.getNodeParameter('options.expectedItemCount', 0, 50) as number;
-		const iterationLimit = this.getNodeParameter('options.iterationLimit', 0, 50) as number;
+		const expectedItemCount = this.getNodeParameter('options.expectedItemCount', 0, 0) as number;
+		const iterationLimit = this.getNodeParameter('options.iterationLimit', 0, 0) as number;
 		const combine = this.getNodeParameter('options.combine', 0, '') as boolean;
 		const anotherPage = this.getNodeParameter('options.anotherPage', 0, true) as boolean;
 
@@ -187,7 +187,7 @@ export class Iterator implements INodeType {
 				else{
 					nodeContext.processedItems =  items;
 				}
-				if(items.length < expectedItemCount){
+				if(expectedItemCount !== 0 && items.length < expectedItemCount){
 					done = true;
 				}
 
@@ -215,7 +215,7 @@ export class Iterator implements INodeType {
 				else{
 					nodeContext.processedItems =  items;
 				}
-				if(items.length < expectedItemCount){
+				if(expectedItemCount !== 0 && items.length < expectedItemCount){
 					done = true;
 				}
 			}
@@ -224,8 +224,8 @@ export class Iterator implements INodeType {
 				done = true;
 			}
 		}
-
-		if(iterationLimit <= nodeContext.nrOfIterations){
+		if(nodeContext.nrOfIterations >= iterationLimit ){
+			console.log(iterationLimit);
 			done=true;
 		}
 
