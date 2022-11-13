@@ -161,6 +161,7 @@ export class Iterator implements INodeType {
 				nodeContext.currentIncrement = incrementStart;
 
 				nodeContext.processedItems = [];
+				done = false;
 			}
 			else{
 				const incrementSize = this.getNodeParameter('incrementSize', 0, 1) as number;
@@ -186,6 +187,7 @@ export class Iterator implements INodeType {
 				nodeContext.currentReference = refStart;
 
 				nodeContext.processedItems = [];
+				done = false;
 			}
 			else{
 				const refNext = this.getNodeParameter('refNext', 0, '') as string;
