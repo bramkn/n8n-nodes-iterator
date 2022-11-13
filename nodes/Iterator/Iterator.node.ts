@@ -225,7 +225,7 @@ export class Iterator implements INodeType {
 			}
 		}
 
-		if(iterationLimit >= nodeContext.nrOfIterations){
+		if(iterationLimit <= nodeContext.nrOfIterations){
 			done=true;
 		}
 
