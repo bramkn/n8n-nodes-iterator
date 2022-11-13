@@ -134,6 +134,16 @@ export class Iterator implements INodeType {
 						default: 50,
 						description: 'Max number of results to return',
 					},
+					{
+						displayName: 'Iteration Limit',
+						name: 'iterationLimit',
+						type: 'number',
+						typeOptions: {
+							minValue: 1,
+						},
+						default: 50,
+						description: 'Max number of iterations',
+					},
 				],
 			},
 		],
@@ -149,6 +159,7 @@ export class Iterator implements INodeType {
 		const iterType = this.getNodeParameter('iterType', 0, '') as string;
 		const limit = this.getNodeParameter('options.limit', 0, 0) as number;
 		const expectedItemCount = this.getNodeParameter('options.expectedItemCount', 0, 50) as number;
+		const iterationLimit = this.getNodeParameter('options.iterationLimit', 0, 50) as number;
 		const combine = this.getNodeParameter('options.combine', 0, '') as boolean;
 		const anotherPage = this.getNodeParameter('options.anotherPage', 0, true) as boolean;
 
@@ -162,7 +173,7 @@ export class Iterator implements INodeType {
 				nodeContext.currentIncrement = incrementStart;
 
 				nodeContext.processedItems = [];
-				nodeContext.nrOfIterations = 1;
+				nodeContext.nrOfIterations = 0;
 				done = false;
 			}
 			else{
@@ -190,7 +201,7 @@ export class Iterator implements INodeType {
 				nodeContext.currentReference = refStart;
 
 				nodeContext.processedItems = [];
-				nodeContext.nrOfIterations = 1;
+				nodeContext.nrOfIterations = 0;
 				done = false;
 			}
 			else{
@@ -212,6 +223,10 @@ export class Iterator implements INodeType {
 			if(nodeContext.currentReference === null){
 				done = true;
 			}
+		}
+
+		if(iterationLimit >= nodeContext.nrOfIterations){
+			done=true;
 		}
 
 		if(limit !== 0 && nodeContext.processedItems.length >= limit){
