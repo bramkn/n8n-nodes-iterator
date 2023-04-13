@@ -4,6 +4,25 @@
 
 The iterator node can be used for paging HTTP requests. There is 2 main options for this.
 
+## Developer
+
+Hi, 
+
+My name is Bram and I am the developer of this node.
+I am an independant consultant and expert partner of n8n.
+My nodes are free to use for everyone, but please consider [donating](https://donate.stripe.com/3cs5oe7xM6L77Yc5ko) when you use my nodes.
+This helps me to build and maintain nodes for everyone to use.
+
+If you are looking for some outside help with n8n, I can of course also offer my services.
+* Node Development
+* Workflow Development
+* Mentoring
+* Support
+
+Please contact me @ bram@knitco.nl if you want to make use of my services.
+
+For questions or issues with nodes, please open an issue on Github.
+
 ## Usage
 The node can be a fit funky to setup some times, this because of the flexibility of it.
 If you cannot figure it out or have questions please open a topic on the n8n community for help.
